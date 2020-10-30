@@ -19,7 +19,8 @@
 import React, {useState} from 'react';
 import FunctionContextComponent from './FunctionContextComponent';
 import ClassContextComponent from './ClassContextComponent';
-
+import dataInform from './data.json'
+import DataContext from './DataContext'
   export const ThemeContext = React.createContext();
 
   export default function App(){
@@ -32,9 +33,11 @@ import ClassContextComponent from './ClassContextComponent';
   return (
     <>
       <ThemeContext.Provider value = {darkTheme}>
+      <DataContext.Provider value={dataInform}>
         <button onClick={toggleTheme}> Toggle Theme</button>
         <FunctionContextComponent/>
         <ClassContextComponent/>
+      </DataContext.Provider>  
       </ThemeContext.Provider>
     </>
 
