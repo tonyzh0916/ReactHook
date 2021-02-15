@@ -4,6 +4,8 @@ const App=()=> {
 
   const [count, setCount] = useState(4);// render component every time when state is changed
   const [theme, setTheme] = useState('blue');
+  const [word, setWord] = useState("where am I?")
+  const [isQuestion, setIsQuestion] = useState(true)
   // const [count, setCount] = useState(()=> {
   //   console.log("run function");
   //   return 4;
@@ -19,12 +21,25 @@ const App=()=> {
   const incrementCount=()=>{
     setCount(prevCount => prevCount+1);
   }
+
+  const handleWordClick=(e)=>{
+    console.log('e => ',e );
+    if(isQuestion){
+      setWord("New York");
+      setIsQuestion(false);
+    }else{
+      setWord("Where am I?");
+      setIsQuestion(true);
+    }
+  
+  }
   return (
     <>
     <button onClick={decrementCount}>-</button>
     <span>{count}</span>
     <span>{theme}</span>
     <button onClick={incrementCount}>+</button>
+    <span onClick={handleWordClick}>{word}</span>
     </>
   );
 }
