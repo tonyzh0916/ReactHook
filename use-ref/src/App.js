@@ -5,6 +5,7 @@ import React, {useState, useEffect, useRef} from 'react';
 // export default function App(){
 //   const [name, setName] = useState();
 //   const renderCount = useRef(0);
+//  !!!!!!!!! useRef will return an object like {current: value}
   //useRef is very very similar with state and that you can store a previous value 
   //and it persistes between different renders but it does not cause you to re-render like state does
 //   useEffect(()=>{
